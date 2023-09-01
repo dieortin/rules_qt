@@ -109,7 +109,7 @@ def _build_qtbase(repository_ctx, prefix, module):
 
     if major == 6:
         configure_module_tool = repository_ctx.path("{prefix}/bin/qt-configure-module".format(prefix = prefix))
-        configure_args.append("-GNinja")
+        configure_args.append("-G Ninja")
 
         # https://gitlab.kitware.com/cmake/community/-/wikis/doc/cmake/RPATH-handling
         configure_extra_args.append("--")
