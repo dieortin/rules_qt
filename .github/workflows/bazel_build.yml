@@ -15,6 +15,9 @@ jobs:
     - name: Install Ninja
       run: sudo apt-get install ninja-build
 
+    - name: Install OpenGL
+      run: sudo apt-get update && sudo apt-get install -y libgl1-mesa-dev
+
     - name: Mount bazel cache
       uses: actions/cache@v3.2.6
       with:
