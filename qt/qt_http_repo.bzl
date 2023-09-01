@@ -109,7 +109,6 @@ def _build_qtbase(repository_ctx, prefix, module):
 
     if major == 6:
         configure_module_tool = repository_ctx.path("{prefix}/bin/qt-configure-module".format(prefix = prefix))
-        configure_args.append("-G Ninja")
 
         # https://gitlab.kitware.com/cmake/community/-/wikis/doc/cmake/RPATH-handling
         configure_extra_args.append("--")
@@ -117,6 +116,7 @@ def _build_qtbase(repository_ctx, prefix, module):
         configure_extra_args.append("-DCMAKE_BUILD_WITH_INSTALL_RPATH=FALSE")
         configure_extra_args.append("-DCMAKE_INSTALL_RPATH={prefix}/lib".format(prefix = prefix))
         configure_extra_args.append("-DCMAKE_INSTALL_RPATH_USE_LINK_PATH=TRUE")
+        configure_extra_args.append("-DCMAKE_GENERATOR=Ninja")
 
         if is_mac_os:
             # force full path in binaries
