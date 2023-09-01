@@ -10,15 +10,16 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      -uses: actions/checkout@v3
+    - uses: actions/checkout@v3
+      
 
-      -name: Mount bazel cache
-       uses: actions/cache@v3
-       with:
-         path: "/home/runner/.cache/bazel"
-         key: bazel
+    - name: Mount bazel cache
+      uses: actions/cache@v3.2.6
+      with:
+        path: "/home/runner/.cache/bazel"
+        key: bazel
      
-      -name: Build
+    - name: Build
       run: |
         cd examples
         bazelisk build //...
