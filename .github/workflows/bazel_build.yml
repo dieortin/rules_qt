@@ -1,0 +1,25 @@
+name: Bazel
+
+on:
+  pull_request: {}
+  push: {}
+
+jobs:
+  build_on_latest_ubuntu:
+    name: Linux Ubuntu (latest) build
+    runs-on: ubuntu-latest
+
+    steps:
+      -uses: actions/checkout@v3
+
+      -name: Mount bazel cache
+       uses: actions/cache@v3
+       with:
+         path: "/home/runner/.cache/bazel"
+         key: bazel
+     
+      -name: Build
+      run: |
+        cd examples
+        bazelisk build //...
+
