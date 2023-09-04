@@ -80,7 +80,7 @@ qt_local_repo(
     infer_deps = True,
     # Linux
     #path = "/usr/lib/qt5",
-    path = "/usr/lib/qt6",
+    path = "/usr/include/x86_64-linux-gnu/qt6",
     # macOS
     #path = "/opt/homebrew/opt/qt5",
     #path = "/opt/homebrew/opt/qt6",
