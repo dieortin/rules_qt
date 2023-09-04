@@ -270,9 +270,11 @@ def _create_libs_symlinks(repository_ctx, qt_libs_context, qtconf):
         is_linux_so = path.basename.endswith(".so")
         is_lib = is_osx_framework or is_linux_so
 
-        if not is_qt or not is_lib:
+        if not is_qt or not is_lib:        
+            print("File " + str(path.basename) + " is a Qt library: NO")
             continue
-
+            
+        print("File " + str(path.basename) + " is a Qt library: YES")
         # TODO: add macOS support
         # find out which other qt modules this one depends on
         qt_deps = []
