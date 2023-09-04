@@ -292,7 +292,7 @@ def _create_libs_symlinks(repository_ctx, qt_libs_context, qtconf):
                 libs = qt_lib_context.libs,
                 has_headers = qt_lib_context.has_headers,
                 is_osx_framework = is_osx_framework,
-                deps = qt_lib_context.deps + qt_deps,
+                deps = qt_lib_context.deps if qt_lib_context.deps else qt_deps,
             )
         else:
             qt_libs_context[lib_name] = _QtLibsContext(
@@ -342,7 +342,7 @@ def _join_libs(libs):
 
 def _join_deps(deps):
     """Helper function that consolidates `deps` list in a string."""
-    return ",".join(["\"{dep}\"".format(dep = dep) for dep in deps])
+    return ",".join(["\"{dep}\"".format(dep = dep) for dep in set(deps)])
 
 def _join_includes(qtconf, libs):
     """Helper function that consolidates `includes` list in a string."""
