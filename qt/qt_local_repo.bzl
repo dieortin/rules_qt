@@ -342,7 +342,7 @@ def _join_libs(libs):
 
 def _join_deps(deps):
     """Helper function that consolidates `deps` list in a string."""
-    return ",".join(["\"{dep}\"".format(dep = dep) for dep in set(deps)])
+    return ",".join(["\"{dep}\"".format(dep = dep) for dep in deps])
 
 def _join_includes(qtconf, libs):
     """Helper function that consolidates `includes` list in a string."""
