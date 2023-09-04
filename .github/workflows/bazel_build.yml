@@ -28,7 +28,7 @@ jobs:
         key: bazel
 
     - name: Query Qt6 Bazel targets
-      run: bazelisk query '@qt//...'
+      run: cd examples && bazelisk query '@qt//...'
      
     - name: Build
       run: |
