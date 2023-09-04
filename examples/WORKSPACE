@@ -80,13 +80,13 @@ qt_local_repo(
     infer_deps = True,
     # Linux
     #path = "/usr/lib/qt5",
-    #path = "/usr/lib/qt6",
+    path = "/usr/lib/qt6",
     # macOS
     #path = "/opt/homebrew/opt/qt5",
     #path = "/opt/homebrew/opt/qt6",
     # remote qt repo
     #qt_http_repo = "@qt_5.15.8",
-    qt_http_repo = "@qt_6.4.3",
+    #qt_http_repo = "@qt_6.4.3",
 )
 
 # examples data
