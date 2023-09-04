@@ -267,7 +267,7 @@ def _create_libs_symlinks(repository_ctx, qt_libs_context, qtconf):
 
         # skip non lib files
         is_osx_framework = path.basename.endswith(".framework")
-        is_linux_so = path.basename.endswith(".so") or path.basename.split(".")[-1] == "so"
+        is_linux_so = path.basename.endswith(".so") or path.basename.split(".")[1] == "so"
         is_lib = is_osx_framework or is_linux_so
 
         if not is_qt or not is_lib:        
